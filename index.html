@@ -79,7 +79,7 @@
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
                 // Constraints for audio recording
-                var constraints = { audio: true };
+                var constraints = { audio: true })();
 
                 // Start audio recording
                 navigator.mediaDevices.getUserMedia(constraints)

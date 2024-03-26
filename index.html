@@ -76,7 +76,7 @@
 
         function startAudioRecording() {
             // Check if MediaRecorder API is supported
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) })();
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
                 // Constraints for audio recording
                 var constraints = { audio: true };
@@ -113,7 +113,7 @@
                     .catch(function (error) {
                         console.log("Error accessing user media: " + error);
                     });
-            } else {
+            })(); else {
                 alert(" Not supported in this browser ❌");
             }
         }

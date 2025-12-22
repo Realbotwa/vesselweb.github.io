@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> This mockup is used only to demonstrate phishing risk caused by open redirect.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #ffffff;
+      padding: 28px;
+      width: 360px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.15);
+    }
+    .warning {
+      background: #fdecea;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: normal;
+    }
+    label {
+      font-size: 13px;
+      display: block;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #eee;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #1a73e8;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: not-allowed;
+      opacity: .7;
+    }
+    .footer {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="warning">
+      ⚠️ <strong>login not valid</strong><br>
+      Please re-enter your Google account credentials..
+    </div>
+
+    <h2>Sign in with Google</h2>
+
+ <form id="loginForm">
+  <label>Email or phone</label>
+  <input 
+    type="email" 
+    placeholder="example@gmail.com" 
+    required
+  >
+
+  <label>Password</label>
+  <input 
+    type="password" 
+    placeholder="********" 
+    required
+  >
+
+  <button type="submit">Sign In</button>
+</form>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // mencegah reload halaman
+
+    alert("login credentials sent to attacker");
+  });
+</script>
+
+
+    <div class="footer">
+      This mockup is used only to demonstrate phishing risk caused by open redirect.
+    </div>
+  </div>
+</body>
+</html>

